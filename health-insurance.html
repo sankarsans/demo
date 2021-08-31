@@ -417,141 +417,46 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="tab quote-list-tab">
                         <ul class="tabs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Auto</a></li>
-                            <li><a href="#">Pet</a></li>
-                            <li><a href="#">Life</a></li>
+                            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                            <li><a data-toggle="tab" href="#home">Business</a></li>
+                            <li><a data-toggle="tab" href="#home">Auto</a></li>
+                            <li><a data-toggle="tab" href="#home">Pet</a></li>
+                            <li><a data-toggle="tab" href="#home">Life</a></li>
                         </ul>
                         <div class="tab_content">
-                            <div class="tabs_item">
+                            <div id="home" class="tab-pane in active tabs_items">
                                 <p>Our experts will reply you with a quote very soon</p>
-                                <form>
+                                <form id="contactForm">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Phone">
+                                        <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="Your Phone">
                                     </div>
-                                    <div class="form-group">
-                                        <select>
+                                    <div class="form-group" >
+                                        <select  name="trialbusiness" id="trialbusiness">
                                             <option value="1">Property Used For</option>
-                                            <option value="2">Home Insurance</option>
-                                            <option value="0">Business Insurance</option>
-                                            <option value="3">Health Insurance</option>
-                                            <option value="4">Travel Insurance</option>
-                                            <option value="5">Car Insurance</option>
-                                            <option value="6">Life Insurance</option>
+                                            <option value="Home Insurance">Home Insurance</option>
+                                            <option value="Auto Insurance">Auto Insurance</option>
+                                            <option value="Pet Insurance">Pet Insurance</option>
+                                            <option value="Life Insurance">Life Insurance</option>
                                         </select>
                                     </div>
-                                    <button type="submit" class="default-btn">Get A Free Quote <span></span></button>
-                                </form>
-                            </div>
-                            <div class="tabs_item">
-                                <p>Our experts will reply you with a quote very soon</p>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    <button type="submit" class="default-btn submit-btn">Get A Free Quote <span></span></button>
+
+                                    <div class="message_box" style="margin:10px 0px;"></div>
+                                    <!-- form-success message -->
+                                    <div class="alert alert-success alert-dismissible" id="suu" style="display: none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                        <img src="images/correct.svg" class="img-responsive" alt="athliosport" />Message sent successfully
                                     </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
+                                    <div class="alert alert-danger alert-dismissible" id="err" style="display: none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                        <strong>Error!</strong> Email not sent. Please contact Admin.
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Phone">
-                                    </div>
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="1">Property Used For</option>
-                                            <option value="2">Home Insurance</option>
-                                            <option value="0">Business Insurance</option>
-                                            <option value="3">Health Insurance</option>
-                                            <option value="4">Travel Insurance</option>
-                                            <option value="5">Car Insurance</option>
-                                            <option value="6">Life Insurance</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="default-btn">Get A Free Quote <span></span></button>
-                                </form>
-                            </div>
-                            <div class="tabs_item">
-                                <p>Our experts will reply you with a quote very soon</p>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Phone">
-                                    </div>
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="1">Property Used For</option>
-                                            <option value="2">Home Insurance</option>
-                                            <option value="0">Business Insurance</option>
-                                            <option value="3">Health Insurance</option>
-                                            <option value="4">Travel Insurance</option>
-                                            <option value="5">Car Insurance</option>
-                                            <option value="6">Life Insurance</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="default-btn">Get A Free Quote <span></span></button>
-                                </form>
-                            </div>
-                            <div class="tabs_item">
-                                <p>Our experts will reply you with a quote very soon</p>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Phone">
-                                    </div>
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="1">Property Used For</option>
-                                            <option value="2">Home Insurance</option>
-                                            <option value="0">Business Insurance</option>
-                                            <option value="3">Health Insurance</option>
-                                            <option value="4">Travel Insurance</option>
-                                            <option value="5">Car Insurance</option>
-                                            <option value="6">Life Insurance</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="default-btn">Get A Free Quote <span></span></button>
-                                </form>
-                            </div>
-                            <div class="tabs_item">
-                                <p>Our experts will reply you with a quote very soon</p>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Phone">
-                                    </div>
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="1">Property Used For</option>
-                                            <option value="2">Home Insurance</option>
-                                            <option value="0">Business Insurance</option>
-                                            <option value="3">Health Insurance</option>
-                                            <option value="4">Travel Insurance</option>
-                                            <option value="5">Car Insurance</option>
-                                            <option value="6">Life Insurance</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="default-btn">Get A Free Quote <span></span></button>
                                 </form>
                             </div>
                         </div>
@@ -672,6 +577,132 @@
     <script src="assets/js/contact-form-script.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          var delay = 2000;
+          $('.submit-btn').click(function(e){
+          e.preventDefault();
+          var name = $('#name').val();
+          if(name == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Your Name!</span>'
+          );
+          $('#name').focus();
+          return false;
+          }
+  
+          // var companyname = $('#companyname').val();
+          // if(companyname == ''){
+          // $('.message_box').html(
+          // '<span style="color:red;">Enter Your Company Name!</span>'
+          // );
+          // $('#companyname').focus();
+          // return false;
+          // }
+        
+          var phonenumber = $('#phone_number').val();
+          if(phonenumber == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Your Mobile Number</span>'
+          );
+          $('#phone_number').focus();
+          return false;
+          }
+        
+        
+          var email = $('#email').val();
+          if(email == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Email Address!</span>'
+          );
+          $('#email').focus();
+          return false;
+          }
+          if( $("#email").val()!='' ){
+          if( !isValidEmailAddress( $("#email").val() ) ){
+          $('.message_box').html(
+          '<span style="color:red;">Provided email address is incorrect!</span>'
+          );
+          $('#email').focus();
+          return false;
+          }
+          }
+  
+        //   var message = $('#message').val();
+        //   if(message == ''){
+        //   $('.message_box').html(
+        //   '<span style="color:red;">Enter Your Message!</span>'
+        //   );
+        //   $('#message').focus();
+        //   return false;
+        //   }
+
+          var combo = document.getElementById("trialbusiness");
+            if(combo.selectedIndex <=0)
+            {
+                $('.message_box').html(
+                '<span style="color:red;">Select Your Insurance type!</span>'
+                );
+                $('#trialbusiness').focus();
+                return false;
+            } else {
+                var trialbusiness = combo.value;
+            }
+                
+        
+          $.ajax
+          ({
+          type: "POST",
+          url: "enquiry.php",
+          data: "name="+name+"&email="+email+"&phone_number="+phonenumber+"&trialbusiness="+trialbusiness,
+          beforeSend: function() {
+          $('.message_box').html(
+          '<img src="assets/img/loader.gif" width="25" height="25"/>'
+          );
+          }, 
+          success: function(data)
+          {
+          setTimeout(function() {
+          $('.message_box').html(data);
+          }, delay);
+          }
+          });
+          });
+        
+       });
+       </script>
+       
+       <script>
+         //Email Validation Function 
+         function isValidEmailAddress(emailAddress) {
+             var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+             return pattern.test(emailAddress);
+         };
+       </script>
+       
+       
+       <script type="text/javascript">
+         function clearFields() {
+           $('form[name="ContactForm"]').submit();
+           $('input[type="text"], textarea').val('');
+         }
+       </script>
+       
+       <!-- error msg control -->
+       <script>
+         $('#suu').hide();
+         $('#err').hide();
+          var cuturl = window.location.href;
+          var sp = cuturl.split("?msg=");
+          if(sp[1] == '1#contact'){
+               $('#suu').show();
+          }else if(sp[1] == '2#contact'){
+              $('#err').show();
+          }
+       </script> 
+  
+  
 </body>
 
 </html>

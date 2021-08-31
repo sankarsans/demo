@@ -300,7 +300,7 @@
                                 <div class="col-lg-12 col-md-6">
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" class="form-control" required
-                                            data-error="Please enter your email" placeholder="Email">
+                                             placeholder="Email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -315,15 +315,25 @@
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" id="message" cols="30" rows="6"
-                                            required data-error="Write your message"
+                                           
                                             placeholder="Your Message"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <button type="submit" class="default-btn">Send Message <span></span></button>
+                                    <button type="submit" class="default-btn submit-btn">Send Message <span></span></button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
+                                    <div class="message_box" style="margin:10px 0px;"></div>
+                                    <!-- form-success message -->
+                                    <div class="alert alert-success alert-dismissible" id="suu" style="display: none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                        <img src="images/correct.svg" class="img-responsive" alt="athliosport" />Message sent successfully
+                                    </div>
+                                    <div class="alert alert-danger alert-dismissible" id="err" style="display: none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                        <strong>Error!</strong> Email not sent. Please contact Admin.
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -394,7 +404,7 @@
                         <h3>Working hours<br><span style="font-size: 14px;font-weight: 500;text-transform: capitalize;">Book an Appointment</span></h3>
                         <ul class="footer-quick-links">
                             
-<li>Monday 9 AM to 5 PM</li>
+                            <li>Monday 9 AM to 5 PM</li>
                             <li>Tuesday 9AM to 5 PM</li>
                             <li>Wednesday 9 AM to 5 PM</li>
                             <li>Thursday 9 AM to 5 PM</li>
@@ -473,6 +483,123 @@
     <script src="assets/js/contact-form-script.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          var delay = 2000;
+          $('.submit-btn').click(function(e){
+          e.preventDefault();
+          var name = $('#name').val();
+          if(name == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Your Name!</span>'
+          );
+          $('#name').focus();
+          return false;
+          }
+  
+          // var companyname = $('#companyname').val();
+          // if(companyname == ''){
+          // $('.message_box').html(
+          // '<span style="color:red;">Enter Your Company Name!</span>'
+          // );
+          // $('#companyname').focus();
+          // return false;
+          // }
+        
+          var phonenumber = $('#phone_number').val();
+          if(phonenumber == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Your Mobile Number</span>'
+          );
+          $('#phone_number').focus();
+          return false;
+          }
+        
+        
+          var email = $('#email').val();
+          if(email == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Email Address!</span>'
+          );
+          $('#email').focus();
+          return false;
+          }
+          if( $("#email").val()!='' ){
+          if( !isValidEmailAddress( $("#email").val() ) ){
+          $('.message_box').html(
+          '<span style="color:red;">Provided email address is incorrect!</span>'
+          );
+          $('#email').focus();
+          return false;
+          }
+          }
+  
+          var message = $('#message').val();
+          if(message == ''){
+          $('.message_box').html(
+          '<span style="color:red;">Enter Your Message!</span>'
+          );
+          $('#message').focus();
+          return false;
+          }
+                
+        
+          $.ajax
+          ({
+          type: "POST",
+          url: "mail.php",
+          data: "name="+name+"&email="+email+"&phone_number="+phonenumber+"&message="+message,
+          beforeSend: function() {
+          $('.message_box').html(
+          '<img src="assets/img/loader.gif" width="25" height="25"/>'
+          );
+          }, 
+          success: function(data)
+          {
+          setTimeout(function() {
+          $('.message_box').html(data);
+          }, delay);
+          }
+          });
+          });
+        
+       });
+       </script>
+       
+       <script>
+         //Email Validation Function 
+         function isValidEmailAddress(emailAddress) {
+             var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+             return pattern.test(emailAddress);
+         };
+       </script>
+       
+       
+       <script type="text/javascript">
+         function clearFields() {
+           $('form[name="ContactForm"]').submit();
+           $('input[type="text"], textarea').val('');
+         }
+       </script>
+       
+       <!-- error msg control -->
+       <script>
+         $('#suu').hide();
+         $('#err').hide();
+          var cuturl = window.location.href;
+          var sp = cuturl.split("?msg=");
+          if(sp[1] == '1#contact'){
+               $('#suu').show();
+          }else if(sp[1] == '2#contact'){
+              $('#err').show();
+          }
+       </script> 
+  
+  
+  
+  <!-- hello new -->
+  
 </body>
 
 </html>
