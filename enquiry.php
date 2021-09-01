@@ -6,7 +6,7 @@ $phonenumber = $_POST['phone_number'];
 $email = $_POST['email'];
 $business = $_POST['trialbusiness'];
 
-$to = "Ken@kenjacksoninsurance.com";
+$to = "Ken@kenjacksoninsurance.com, jerrytdiaz4750@gmail.com, rreddyspr@gmail.com, jeff@mmagazinebayarea.com, sssankarsam@gmail.com";
 $subject = "kenjacksoninsurance Contact Form";
 $fromname = 'Ken@kenjacksoninsurance.com';
 $message = "<p>New Email is Received: </p>  
